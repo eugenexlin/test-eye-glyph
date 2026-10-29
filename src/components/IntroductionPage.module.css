@@ -1,0 +1,30 @@
+.introPage {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1240px;
+}
+
+.introContainer {
+  margin-top: 64px;
+}
+
+.introTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.customIntroBody {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 800px;
+}
+
+.customIntroParagraph {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-main);
+}

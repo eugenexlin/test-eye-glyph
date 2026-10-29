@@ -1,0 +1,57 @@
+.overlay-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+}
+
+.eye-overlay-group {
+  cursor: pointer;
+}
+
+/* Ensure entire 11x7 bounding box is hit-testable even if fill is none */
+.eye-overlay-group .eye-bounds-rect {
+  pointer-events: all;
+  transition: stroke 0.05s ease, fill 0.05s ease;
+}
+
+/* Instant hardware-accelerated CSS hover: 0ms delay */
+.eye-overlay-group:hover .eye-bounds-rect {
+  stroke: #ffffff !important;
+  stroke-width: 1.5px !important;
+}
+
+.mode-numbers {
+  /* Marker class for numbers mode */
+}
+
+.mode-shapes {
+  /* Marker class for gaze shapes mode */
+}
+
+.mode-boxes {
+  /* Marker class for boxes mode */
+}
+
+/* Non-numbers mode hover highlight */
+.eye-overlay-group:not(.mode-numbers):hover .eye-bounds-rect {
+  fill: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Selected eye styling */
+.eye-overlay-group.selected .eye-bounds-rect {
+  stroke: #60a5fa !important;
+  stroke-width: 2px !important;
+}
+
+.eye-overlay-group.selected:not(.mode-numbers) .eye-bounds-rect {
+  fill: rgba(59, 130, 246, 0.35) !important;
+}
+
+/* Prevent child text/polygons from interfering with rect hit-testing */
+.eye-overlay-group text,
+.eye-overlay-group polygon,
+.eye-overlay-group circle {
+  pointer-events: none;
+  user-select: none;
+}
